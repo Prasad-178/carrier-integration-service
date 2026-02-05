@@ -1,7 +1,9 @@
 import { z } from 'zod';
+import { WeightUnit, DimensionUnit, PackagingType } from '../models/package.js';
 
-export const WeightUnitSchema = z.enum(['LB', 'KG', 'OZ', 'G']);
-export const DimensionUnitSchema = z.enum(['IN', 'CM']);
+export const WeightUnitSchema = z.nativeEnum(WeightUnit);
+export const DimensionUnitSchema = z.nativeEnum(DimensionUnit);
+export const PackagingTypeSchema = z.nativeEnum(PackagingType);
 
 export const WeightSchema = z.object({
   value: z.number().positive('Weight must be positive'),
@@ -14,16 +16,6 @@ export const DimensionsSchema = z.object({
   height: z.number().positive('Height must be positive'),
   unit: DimensionUnitSchema,
 });
-
-export const PackagingTypeSchema = z.enum([
-  'YOUR_PACKAGING',
-  'CARRIER_ENVELOPE',
-  'CARRIER_PAK',
-  'CARRIER_BOX_SMALL',
-  'CARRIER_BOX_MEDIUM',
-  'CARRIER_BOX_LARGE',
-  'CARRIER_TUBE',
-]);
 
 export const DeclaredValueSchema = z.object({
   amount: z.number().nonnegative('Declared value must be non-negative'),

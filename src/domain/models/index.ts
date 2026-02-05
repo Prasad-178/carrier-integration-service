@@ -1,13 +1,12 @@
 export type { Address } from './address.js';
-export type {
-  Weight,
-  Dimensions,
-  Package,
+export {
   WeightUnit,
   DimensionUnit,
   PackagingType,
 } from './package.js';
-export type { Shipment, ServiceLevel } from './shipment.js';
+export type { Weight, Dimensions, Package } from './package.js';
+export { ServiceLevel } from './shipment.js';
+export type { Shipment } from './shipment.js';
 export type {
   Money,
   ChargeBreakdown,

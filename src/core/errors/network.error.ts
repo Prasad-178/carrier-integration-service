@@ -37,27 +37,58 @@ export class NetworkError extends ShippingError {
   }
 }
 
+export interface TimeoutErrorOptions {
+  message?: string;
+  timeoutMs?: number;
+}
+
 export class TimeoutError extends NetworkError {
   readonly timeoutMs?: number;
 
-  constructor(message = 'Request timed out', timeoutMs?: number) {
-    super(message, 'TIMEOUT', {
-      context: timeoutMs ? { timeoutMs } : undefined,
-    });
+  constructor(options?: TimeoutErrorOptions);
+  constructor(message?: string, timeoutMs?: number);
+  constructor(messageOrOptions?: string | TimeoutErrorOptions, timeoutMs?: number) {
+    if (typeof messageOrOptions === 'object') {
+      const opts = messageOrOptions;
+      super(opts.message ?? 'Request timed out', 'TIMEOUT', {
+        context: opts.timeoutMs ? { timeoutMs: opts.timeoutMs } : undefined,
+      });
+      this.timeoutMs = opts.timeoutMs;
+    } else {
+      super(messageOrOptions ?? 'Request timed out', 'TIMEOUT', {
+        context: timeoutMs ? { timeoutMs } : undefined,
+      });
+      this.timeoutMs = timeoutMs;
+    }
     this.name = 'TimeoutError';
-    this.timeoutMs = timeoutMs;
   }
+}
+
+export interface RateLimitErrorOptions {
+  message?: string;
+  retryAfter?: number;
 }
 
 export class RateLimitError extends NetworkError {
   readonly retryAfter?: number;
 
-  constructor(message = 'Rate limit exceeded', retryAfter?: number) {
-    super(message, 'RATE_LIMIT', {
-      statusCode: 429,
-      context: retryAfter ? { retryAfter } : undefined,
-    });
+  constructor(options?: RateLimitErrorOptions);
+  constructor(message?: string, retryAfter?: number);
+  constructor(messageOrOptions?: string | RateLimitErrorOptions, retryAfter?: number) {
+    if (typeof messageOrOptions === 'object') {
+      const opts = messageOrOptions;
+      super(opts.message ?? 'Rate limit exceeded', 'RATE_LIMIT', {
+        statusCode: 429,
+        context: opts.retryAfter ? { retryAfter: opts.retryAfter } : undefined,
+      });
+      this.retryAfter = opts.retryAfter;
+    } else {
+      super(messageOrOptions ?? 'Rate limit exceeded', 'RATE_LIMIT', {
+        statusCode: 429,
+        context: retryAfter ? { retryAfter } : undefined,
+      });
+      this.retryAfter = retryAfter;
+    }
     this.name = 'RateLimitError';
-    this.retryAfter = retryAfter;
   }
 }

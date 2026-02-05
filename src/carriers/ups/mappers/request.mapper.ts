@@ -1,4 +1,5 @@
 import type { RateRequest, Address, Package, Weight } from '../../../domain/models/index.js';
+import { WeightUnit } from '../../../domain/models/index.js';
 import type { UPSRateRequest, UPSShipper, UPSShipTo, UPSShipFrom, UPSPackage, UPSAddress } from '../types/api.types.js';
 import {
   SERVICE_LEVEL_TO_UPS,
@@ -135,8 +136,8 @@ export class UPSRequestMapper {
   }
 
   private normalizeWeight(weight: Weight): number {
-    if (weight.unit === 'OZ') return weight.value / 16;
-    if (weight.unit === 'G') return weight.value / 1000;
+    if (weight.unit === WeightUnit.OZ) return weight.value / 16;
+    if (weight.unit === WeightUnit.G) return weight.value / 1000;
     return weight.value;
   }
 }

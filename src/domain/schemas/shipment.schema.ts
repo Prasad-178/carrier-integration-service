@@ -1,18 +1,9 @@
 import { z } from 'zod';
 import { AddressSchema } from './address.schema.js';
 import { PackageSchema } from './package.schema.js';
+import { ServiceLevel } from '../models/shipment.js';
 
-export const ServiceLevelSchema = z.enum([
-  'GROUND',
-  'EXPRESS',
-  'EXPRESS_SAVER',
-  'OVERNIGHT',
-  'OVERNIGHT_EARLY',
-  'TWO_DAY',
-  'THREE_DAY',
-  'INTERNATIONAL_ECONOMY',
-  'INTERNATIONAL_PRIORITY',
-]);
+export const ServiceLevelSchema = z.nativeEnum(ServiceLevel);
 
 const isoDateRegex = /^\d{4}-\d{2}-\d{2}$/;
 

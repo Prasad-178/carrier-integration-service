@@ -1,5 +1,24 @@
-export type WeightUnit = 'LB' | 'KG' | 'OZ' | 'G';
-export type DimensionUnit = 'IN' | 'CM';
+export enum WeightUnit {
+  LB = 'LB',
+  KG = 'KG',
+  OZ = 'OZ',
+  G = 'G',
+}
+
+export enum DimensionUnit {
+  IN = 'IN',
+  CM = 'CM',
+}
+
+export enum PackagingType {
+  YOUR_PACKAGING = 'YOUR_PACKAGING',
+  CARRIER_ENVELOPE = 'CARRIER_ENVELOPE',
+  CARRIER_PAK = 'CARRIER_PAK',
+  CARRIER_BOX_SMALL = 'CARRIER_BOX_SMALL',
+  CARRIER_BOX_MEDIUM = 'CARRIER_BOX_MEDIUM',
+  CARRIER_BOX_LARGE = 'CARRIER_BOX_LARGE',
+  CARRIER_TUBE = 'CARRIER_TUBE',
+}
 
 export interface Weight {
   value: number;
@@ -12,15 +31,6 @@ export interface Dimensions {
   height: number;
   unit: DimensionUnit;
 }
-
-export type PackagingType =
-  | 'YOUR_PACKAGING'
-  | 'CARRIER_ENVELOPE'
-  | 'CARRIER_PAK'
-  | 'CARRIER_BOX_SMALL'
-  | 'CARRIER_BOX_MEDIUM'
-  | 'CARRIER_BOX_LARGE'
-  | 'CARRIER_TUBE';
 
 export interface Package {
   weight: Weight;

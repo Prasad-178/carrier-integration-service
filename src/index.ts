@@ -1,15 +1,18 @@
 export { ShippingClient, type ShippingClientOptions } from './client.js';
 
+export {
+  ServiceLevel,
+  WeightUnit,
+  DimensionUnit,
+  PackagingType,
+} from './domain/models/index.js';
+
 export type {
   Address,
   Package,
   Weight,
   Dimensions,
   Shipment,
-  ServiceLevel,
-  WeightUnit,
-  DimensionUnit,
-  PackagingType,
   RateRequest,
   RateResponse,
   RateQuote,
@@ -58,7 +61,7 @@ export {
 
 export { type Result, ok, err, isOk, isErr, unwrap, unwrapOr } from './utils/result.js';
 
-export { AxiosHttpClient, type AxiosClientOptions } from './http/axios-client.js';
+export { AxiosHttpClient, createHttpClient, type AxiosClientOptions } from './http/axios-client.js';
 
 export {
   UPSCarrier,

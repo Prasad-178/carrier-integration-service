@@ -19,18 +19,36 @@ import {
 const DEFAULT_TIMEOUT = 30000;
 
 export interface AxiosClientOptions {
+  /** Request timeout in milliseconds */
   timeout?: number;
+  /** Base URL for all requests - paths will be appended to this */
   baseURL?: string;
+  /** Default headers to include with every request */
+  defaultHeaders?: Record<string, string>;
+}
+
+/**
+ * Creates a configured HTTP client instance
+ */
+export function createHttpClient(options: AxiosClientOptions = {}): IHttpClient {
+  return new AxiosHttpClient(options);
 }
 
 export class AxiosHttpClient implements IHttpClient {
   private client: AxiosInstance;
+  private readonly baseURL?: string;
 
   constructor(options: AxiosClientOptions = {}) {
+    this.baseURL = options.baseURL;
     this.client = axios.create({
       timeout: options.timeout ?? DEFAULT_TIMEOUT,
       baseURL: options.baseURL,
+      headers: options.defaultHeaders,
     });
+  }
+
+  getBaseURL(): string | undefined {
+    return this.baseURL;
   }
 
   async request<T>(req: HttpRequest): Promise<Result<HttpResponse<T>, NetworkError>> {

@@ -1,3 +1,4 @@
+import dayjs from 'dayjs';
 import type {
   RateResponse,
   RateQuote,
@@ -5,6 +6,7 @@ import type {
   ChargeBreakdown,
   DeliveryEstimate,
 } from '../../../domain/models/index.js';
+import { ServiceLevel } from '../../../domain/models/index.js';
 import type { UPSRateResponse, UPSRatedShipment, UPSCharges } from '../types/api.types.js';
 import { UPS_SERVICE_CODES, UPS_CARRIER_ID, UPS_CARRIER_NAME } from '../ups.constants.js';
 
@@ -26,7 +28,7 @@ export class UPSResponseMapper {
       success: true,
       quotes,
       requestId,
-      timestamp: new Date().toISOString(),
+      timestamp: dayjs().toISOString(),
       warnings: this.extractWarnings(upsResponse),
     };
   }
@@ -36,7 +38,7 @@ export class UPSResponseMapper {
     const serviceInfo = UPS_SERVICE_CODES[serviceCode] || {
       code: serviceCode,
       name: rated.Service.Description || 'Unknown Service',
-      serviceLevel: 'GROUND' as const,
+      serviceLevel: ServiceLevel.GROUND,
     };
 
     const totalCharge = this.mapMoney(rated.TotalCharges);

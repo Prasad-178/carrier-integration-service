@@ -1,3 +1,4 @@
+import dayjs from 'dayjs';
 import type { IAuthProvider, AuthToken } from '../../core/interfaces/auth-provider.interface.js';
 import type { IHttpClient } from '../../core/interfaces/http-client.interface.js';
 import type { UPSConfig } from './ups.config.js';
@@ -9,7 +10,7 @@ import {
   InvalidCredentialsError,
 } from '../../core/errors/auth.error.js';
 
-const TOKEN_REFRESH_BUFFER_MS = 60_000;
+const TOKEN_REFRESH_BUFFER_SECONDS = 60;
 
 export class UPSAuthProvider implements IAuthProvider {
   private config: UPSConfig;
@@ -109,9 +110,10 @@ export class UPSAuthProvider implements IAuthProvider {
 
     const oauthData = validation.data;
 
-    const expiresAt = new Date(
-      Date.now() + oauthData.expires_in * 1000 - TOKEN_REFRESH_BUFFER_MS
-    );
+    const expiresAt = dayjs()
+      .add(oauthData.expires_in, 'seconds')
+      .subtract(TOKEN_REFRESH_BUFFER_SECONDS, 'seconds')
+      .toDate();
 
     this.cachedToken = {
       accessToken: oauthData.access_token,
@@ -129,6 +131,6 @@ export class UPSAuthProvider implements IAuthProvider {
 
   hasValidToken(): boolean {
     if (!this.cachedToken) return false;
-    return this.cachedToken.expiresAt > new Date();
+    return dayjs(this.cachedToken.expiresAt).isAfter(dayjs());
   }
 }
