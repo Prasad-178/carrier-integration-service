@@ -18,10 +18,13 @@ const config: Config = {
       'ts-jest',
       {
         useESM: true,
+        isolatedModules: true,
         tsconfig: {
           module: 'ESNext',
           moduleResolution: 'Node',
           verbatimModuleSyntax: false,
+          esModuleInterop: true,
+          resolveJsonModule: true,
         },
       },
     ],
