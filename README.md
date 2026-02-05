@@ -39,11 +39,14 @@ import {
   ShippingClient,
   UPSCarrier,
   createUPSConfig,
-  AxiosHttpClient,
+  createHttpClient,
+  WeightUnit,
+  DimensionUnit,
+  PackagingType,
 } from 'cybership';
 
-// Create HTTP client
-const httpClient = new AxiosHttpClient();
+// Create HTTP client with optional baseURL
+const httpClient = createHttpClient({ timeout: 30000 });
 
 // Create UPS configuration
 const configResult = createUPSConfig({
@@ -84,9 +87,9 @@ const rateResult = await client.getRates('ups', {
     },
     packages: [
       {
-        weight: { value: 5, unit: 'LB' },
-        dimensions: { length: 10, width: 8, height: 6, unit: 'IN' },
-        packagingType: 'YOUR_PACKAGING',
+        weight: { value: 5, unit: WeightUnit.LB },
+        dimensions: { length: 10, width: 8, height: 6, unit: DimensionUnit.IN },
+        packagingType: PackagingType.YOUR_PACKAGING,
       },
     ],
   },
@@ -212,6 +215,32 @@ npm run test:watch
 - **Logging**: Structured logging with correlation IDs
 - **Metrics**: Request timing, error rates, cache hit rates
 - **Rate Limiting**: Client-side rate limiting per carrier
+
+## Technical Notes
+
+### ESM Import Extensions
+
+The source code uses `.js` extensions in TypeScript imports (e.g., `import { foo } from './bar.js'`). This is the [recommended pattern](https://www.typescriptlang.org/docs/handbook/modules/reference.html#file-extension-substitution) for Node.js ESM projects - TypeScript compiles `.ts` → `.js` but doesn't rewrite import paths, so imports must reference the output extension.
+
+The project uses [tsup](https://tsup.egoist.dev/) as a bundler, which produces a clean single-file ESM output.
+
+### TypeScript Enums with Zod
+
+Domain types (ServiceLevel, WeightUnit, etc.) are TypeScript enums, validated at runtime using Zod's `z.nativeEnum()`:
+
+```typescript
+// TypeScript enum
+export enum ServiceLevel {
+  GROUND = 'GROUND',
+  EXPRESS = 'EXPRESS',
+  // ...
+}
+
+// Zod schema using the enum
+export const ServiceLevelSchema = z.nativeEnum(ServiceLevel);
+```
+
+This provides both compile-time type safety and runtime validation.
 
 ## License
 
