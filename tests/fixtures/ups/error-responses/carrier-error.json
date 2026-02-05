@@ -1,0 +1,16 @@
+{
+  "RateResponse": {
+    "Response": {
+      "ResponseStatus": {
+        "Code": "0",
+        "Description": "Failure"
+      },
+      "Error": {
+        "ErrorSeverity": "Hard",
+        "ErrorCode": "111210",
+        "ErrorDescription": "The requested service is unavailable between the selected locations"
+      }
+    },
+    "RatedShipment": []
+  }
+}

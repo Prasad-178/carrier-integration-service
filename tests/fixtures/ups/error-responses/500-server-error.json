@@ -1,0 +1,15 @@
+{
+  "RateResponse": {
+    "Response": {
+      "ResponseStatus": {
+        "Code": "0",
+        "Description": "Failure"
+      },
+      "Error": {
+        "ErrorSeverity": "Hard",
+        "ErrorCode": "190001",
+        "ErrorDescription": "An internal server error has occurred"
+      }
+    }
+  }
+}

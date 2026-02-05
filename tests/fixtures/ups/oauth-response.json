@@ -1,0 +1,8 @@
+{
+  "token_type": "Bearer",
+  "access_token": "mock-access-token-12345",
+  "expires_in": 3600,
+  "issued_at": "2025-02-05T10:00:00Z",
+  "client_id": "test-client-id",
+  "scope": "read write"
+}
