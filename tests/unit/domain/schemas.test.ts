@@ -37,13 +37,13 @@ describe('Domain Schemas', () => {
     });
 
     it('should reject address without name', () => {
-      const { name, ...addressWithoutName } = validAddress;
+      const { name: _name, ...addressWithoutName } = validAddress;
       const result = AddressSchema.safeParse(addressWithoutName);
       expect(result.success).toBe(false);
     });
 
     it('should reject address without country code', () => {
-      const { countryCode, ...addressWithoutCountry } = validAddress;
+      const { countryCode: _countryCode, ...addressWithoutCountry } = validAddress;
       const result = AddressSchema.safeParse(addressWithoutCountry);
       expect(result.success).toBe(false);
     });

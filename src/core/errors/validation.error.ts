@@ -20,8 +20,9 @@ export class ValidationError extends ShippingError {
     const errors: Record<string, string[]> = {};
     for (const issue of this.issues) {
       const path = issue.path.join('.') || 'root';
-      if (!errors[path]) errors[path] = [];
-      errors[path]!.push(issue.message);
+      const existing = errors[path] ?? [];
+      existing.push(issue.message);
+      errors[path] = existing;
     }
     return errors;
   }

@@ -91,8 +91,9 @@ export class ShippingClient {
       })
     );
 
-    if (allQuotes.length === 0 && errors.length > 0) {
-      return err(errors[0]!);
+    const firstError = errors[0];
+    if (allQuotes.length === 0 && firstError) {
+      return err(firstError);
     }
 
     allQuotes.sort((a, b) => a.totalCharge.amount - b.totalCharge.amount);

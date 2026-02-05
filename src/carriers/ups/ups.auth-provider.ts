@@ -24,8 +24,8 @@ export class UPSAuthProvider implements IAuthProvider {
   }
 
   async getToken(): Promise<Result<AuthToken, AuthenticationError>> {
-    if (this.hasValidToken()) {
-      return ok(this.cachedToken!);
+    if (this.hasValidToken() && this.cachedToken) {
+      return ok(this.cachedToken);
     }
 
     if (this.refreshPromise) {
