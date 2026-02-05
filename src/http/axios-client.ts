@@ -7,14 +7,14 @@ import type {
   IHttpClient,
   HttpRequest,
   HttpResponse,
-} from '../core/interfaces/http-client.interface.js';
-import type { Result } from '../utils/result.js';
-import { ok, err } from '../utils/result.js';
+} from '../core/interfaces/http-client.interface';
+import type { Result } from '../utils/result';
+import { ok, err } from '../utils/result';
 import {
   NetworkError,
   TimeoutError,
   RateLimitError,
-} from '../core/errors/network.error.js';
+} from '../core/errors/network.error';
 
 const DEFAULT_TIMEOUT = 30000;
 

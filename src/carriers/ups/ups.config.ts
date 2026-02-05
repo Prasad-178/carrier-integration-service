@@ -1,7 +1,7 @@
 import { z } from 'zod';
-import type { Result } from '../../utils/result.js';
-import { ok, err } from '../../utils/result.js';
-import { ShippingError } from '../../core/errors/base.error.js';
+import type { Result } from '../../utils/result';
+import { ok, err } from '../../utils/result';
+import { ShippingError } from '../../core/errors/base.error';
 
 export const UPSConfigSchema = z.object({
   clientId: z.string().min(1, 'Client ID is required'),

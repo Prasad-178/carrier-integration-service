@@ -1,8 +1,8 @@
-import { MockHttpClient } from '../../mocks/http-client.mock.js';
-import { UPSCarrier } from '../../../src/carriers/ups/ups.carrier.js';
-import type { UPSConfig } from '../../../src/carriers/ups/ups.config.js';
-import type { IRateProvider } from '../../../src/core/interfaces/rate-provider.interface.js';
-import { ADDRESSES, PACKAGES } from '../../fixtures/common/index.js';
+import { MockHttpClient } from '../../mocks/http-client.mock';
+import { UPSCarrier } from '../../../src/carriers/ups/ups.carrier';
+import type { UPSConfig } from '../../../src/carriers/ups/ups.config';
+import type { IRateProvider } from '../../../src/core/interfaces/rate-provider.interface';
+import { ADDRESSES, PACKAGES } from '../../fixtures/common/index';
 import oauthResponseFixture from '../../fixtures/ups/oauth-response.json';
 import carrierErrorFixture from '../../fixtures/ups/error-responses/carrier-error.json';
 

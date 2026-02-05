@@ -3,7 +3,7 @@ import {
   PackagingType,
   WeightUnit,
   DimensionUnit,
-} from '../../domain/models/index.js';
+} from '../../domain/models/index';
 
 export interface UPSServiceInfo {
   code: string;

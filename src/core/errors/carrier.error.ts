@@ -1,4 +1,4 @@
-import { ShippingError, type ErrorContext } from './base.error.js';
+import { ShippingError, type ErrorContext } from './base.error';
 
 export class CarrierError extends ShippingError {
   readonly carrierId: string;

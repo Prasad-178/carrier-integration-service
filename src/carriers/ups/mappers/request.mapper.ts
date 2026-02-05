@@ -1,13 +1,13 @@
-import type { RateRequest, Address, Package, Weight } from '../../../domain/models/index.js';
-import { WeightUnit } from '../../../domain/models/index.js';
-import type { UPSRateRequest, UPSShipper, UPSShipTo, UPSShipFrom, UPSPackage, UPSAddress } from '../types/api.types.js';
+import type { RateRequest, Address, Package, Weight } from '../../../domain/models/index';
+import { WeightUnit } from '../../../domain/models/index';
+import type { UPSRateRequest, UPSShipper, UPSShipTo, UPSShipFrom, UPSPackage, UPSAddress } from '../types/api.types';
 import {
   SERVICE_LEVEL_TO_UPS,
   UPS_PACKAGING_CODES,
   UPS_WEIGHT_UNIT_CODES,
   UPS_DIMENSION_UNIT_CODES,
   UPS_API_VERSION,
-} from '../ups.constants.js';
+} from '../ups.constants';
 
 export class UPSRequestMapper {
   toUPSRequest(request: RateRequest): UPSRateRequest {

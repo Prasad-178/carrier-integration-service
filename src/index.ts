@@ -1,11 +1,11 @@
-export { ShippingClient, type ShippingClientOptions } from './client.js';
+export { ShippingClient, type ShippingClientOptions } from './client';
 
 export {
   ServiceLevel,
   WeightUnit,
   DimensionUnit,
   PackagingType,
-} from './domain/models/index.js';
+} from './domain/models/index';
 
 export type {
   Address,
@@ -19,7 +19,7 @@ export type {
   Money,
   ChargeBreakdown,
   DeliveryEstimate,
-} from './domain/models/index.js';
+} from './domain/models/index';
 
 export {
   AddressSchema,
@@ -28,7 +28,7 @@ export {
   RateRequestSchema,
   RateResponseSchema,
   ServiceLevelSchema,
-} from './domain/schemas/index.js';
+} from './domain/schemas/index';
 
 export type {
   ICarrier,
@@ -40,9 +40,9 @@ export type {
   HttpRequest,
   HttpResponse,
   OperationType,
-} from './core/interfaces/index.js';
+} from './core/interfaces/index';
 
-export { CarrierRegistry } from './core/registry/carrier-registry.js';
+export { CarrierRegistry } from './core/registry/carrier-registry';
 
 export {
   ShippingError,
@@ -57,11 +57,11 @@ export {
   CarrierNotFoundError,
   type ErrorCode,
   type ErrorContext,
-} from './core/errors/index.js';
+} from './core/errors/index';
 
-export { type Result, ok, err, isOk, isErr, unwrap, unwrapOr } from './utils/result.js';
+export { type Result, ok, err, isOk, isErr, unwrap, unwrapOr } from './utils/result';
 
-export { AxiosHttpClient, createHttpClient, type AxiosClientOptions } from './http/axios-client.js';
+export { AxiosHttpClient, createHttpClient, type AxiosClientOptions } from './http/axios-client';
 
 export {
   UPSCarrier,
@@ -74,4 +74,4 @@ export {
   UPS_SERVICE_CODES,
   UPS_CARRIER_ID,
   UPS_CARRIER_NAME,
-} from './carriers/ups/index.js';
+} from './carriers/ups/index';

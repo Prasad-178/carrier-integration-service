@@ -1,4 +1,4 @@
-import type { ServiceLevel } from './shipment.js';
+import type { ServiceLevel } from './shipment';
 
 export interface Money {
   amount: number;

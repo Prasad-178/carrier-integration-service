@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { ServiceLevelSchema } from './shipment.schema.js';
+import { ServiceLevelSchema } from './shipment.schema';
 
 export const MoneySchema = z.object({
   amount: z.number(),

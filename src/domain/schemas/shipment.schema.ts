@@ -1,7 +1,7 @@
 import { z } from 'zod';
-import { AddressSchema } from './address.schema.js';
-import { PackageSchema } from './package.schema.js';
-import { ServiceLevel } from '../models/shipment.js';
+import { AddressSchema } from './address.schema';
+import { PackageSchema } from './package.schema';
+import { ServiceLevel } from '../models/shipment';
 
 export const ServiceLevelSchema = z.nativeEnum(ServiceLevel);
 

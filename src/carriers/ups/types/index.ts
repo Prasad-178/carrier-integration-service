@@ -27,4 +27,4 @@ export type {
   UPSResponse,
   UPSRateResponse,
   UPSOAuthResponse,
-} from './api.types.js';
+} from './api.types';

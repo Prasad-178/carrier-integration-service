@@ -1,4 +1,4 @@
-import type { Address } from '../../../src/domain/models/index.js';
+import type { Address } from '../../../src/domain/models/index';
 
 export const ADDRESSES = {
   US_RESIDENTIAL: {

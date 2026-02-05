@@ -1,9 +1,9 @@
-import type { ICarrier, IRateProvider, OperationType } from './core/interfaces/index.js';
-import { CarrierRegistry } from './core/registry/carrier-registry.js';
-import type { RateRequest, RateResponse, RateQuote } from './domain/models/index.js';
-import type { Result } from './utils/result.js';
-import { ok, err } from './utils/result.js';
-import { ShippingError } from './core/errors/base.error.js';
+import type { ICarrier, IRateProvider, OperationType } from './core/interfaces/index';
+import { CarrierRegistry } from './core/registry/carrier-registry';
+import type { RateRequest, RateResponse, RateQuote } from './domain/models/index';
+import type { Result } from './utils/result';
+import { ok, err } from './utils/result';
+import { ShippingError } from './core/errors/base.error';
 
 export interface ShippingClientOptions {
   carriers?: ICarrier[];

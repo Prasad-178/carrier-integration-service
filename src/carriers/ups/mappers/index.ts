@@ -1,2 +1,2 @@
-export { UPSRequestMapper } from './request.mapper.js';
-export { UPSResponseMapper } from './response.mapper.js';
+export { UPSRequestMapper } from './request.mapper';
+export { UPSResponseMapper } from './response.mapper';

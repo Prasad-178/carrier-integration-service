@@ -5,7 +5,7 @@ import {
   RateRequestSchema,
   WeightSchema,
   DimensionsSchema,
-} from '../../../src/domain/schemas/index.js';
+} from '../../../src/domain/schemas/index';
 
 describe('Domain Schemas', () => {
   describe('AddressSchema', () => {

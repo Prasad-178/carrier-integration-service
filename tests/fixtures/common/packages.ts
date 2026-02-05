@@ -1,4 +1,4 @@
-import type { Package } from '../../../src/domain/models/index.js';
+import type { Package } from '../../../src/domain/models/index';
 
 export const PACKAGES = {
   SMALL_BOX: {

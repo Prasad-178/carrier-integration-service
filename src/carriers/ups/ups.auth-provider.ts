@@ -1,14 +1,14 @@
 import dayjs from 'dayjs';
-import type { IAuthProvider, AuthToken } from '../../core/interfaces/auth-provider.interface.js';
-import type { IHttpClient } from '../../core/interfaces/http-client.interface.js';
-import type { UPSConfig } from './ups.config.js';
-import { UPSOAuthResponseSchema } from './schemas/oauth.schema.js';
-import type { Result } from '../../utils/result.js';
-import { ok, err } from '../../utils/result.js';
+import type { IAuthProvider, AuthToken } from '../../core/interfaces/auth-provider.interface';
+import type { IHttpClient } from '../../core/interfaces/http-client.interface';
+import type { UPSConfig } from './ups.config';
+import { UPSOAuthResponseSchema } from './schemas/oauth.schema';
+import type { Result } from '../../utils/result';
+import { ok, err } from '../../utils/result';
 import {
   AuthenticationError,
   InvalidCredentialsError,
-} from '../../core/errors/auth.error.js';
+} from '../../core/errors/auth.error';
 
 const TOKEN_REFRESH_BUFFER_SECONDS = 60;
 

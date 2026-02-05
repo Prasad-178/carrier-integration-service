@@ -1,4 +1,4 @@
-import { ShippingError, type ErrorCode, type ErrorContext } from './base.error.js';
+import { ShippingError, type ErrorCode, type ErrorContext } from './base.error';
 
 export class AuthenticationError extends ShippingError {
   constructor(

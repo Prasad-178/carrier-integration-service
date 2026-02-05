@@ -1,19 +1,19 @@
 import { v4 as uuidv4 } from 'uuid';
-import type { IRateProvider } from '../../core/interfaces/rate-provider.interface.js';
-import type { IHttpClient } from '../../core/interfaces/http-client.interface.js';
-import type { RateRequest, RateResponse } from '../../domain/models/index.js';
-import type { UPSConfig } from './ups.config.js';
-import type { UPSAuthProvider } from './ups.auth-provider.js';
-import { UPSRequestMapper } from './mappers/request.mapper.js';
-import { UPSResponseMapper } from './mappers/response.mapper.js';
-import { UPSRateResponseSchema } from './schemas/rate-response.schema.js';
-import { RateRequestSchema } from '../../domain/schemas/rate-request.schema.js';
-import type { Result } from '../../utils/result.js';
-import { ok, err } from '../../utils/result.js';
-import { ShippingError } from '../../core/errors/base.error.js';
-import { ValidationError } from '../../core/errors/validation.error.js';
-import { CarrierError } from '../../core/errors/carrier.error.js';
-import { UPS_API_VERSION, UPS_CARRIER_ID } from './ups.constants.js';
+import type { IRateProvider } from '../../core/interfaces/rate-provider.interface';
+import type { IHttpClient } from '../../core/interfaces/http-client.interface';
+import type { RateRequest, RateResponse } from '../../domain/models/index';
+import type { UPSConfig } from './ups.config';
+import type { UPSAuthProvider } from './ups.auth-provider';
+import { UPSRequestMapper } from './mappers/request.mapper';
+import { UPSResponseMapper } from './mappers/response.mapper';
+import { UPSRateResponseSchema } from './schemas/rate-response.schema';
+import { RateRequestSchema } from '../../domain/schemas/rate-request.schema';
+import type { Result } from '../../utils/result';
+import { ok, err } from '../../utils/result';
+import { ShippingError } from '../../core/errors/base.error';
+import { ValidationError } from '../../core/errors/validation.error';
+import { CarrierError } from '../../core/errors/carrier.error';
+import { UPS_API_VERSION, UPS_CARRIER_ID } from './ups.constants';
 
 export class UPSRateProvider implements IRateProvider {
   readonly operationType = 'rate' as const;

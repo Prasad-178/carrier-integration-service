@@ -5,7 +5,6 @@ const config: Config = {
   testEnvironment: 'node',
   extensionsToTreatAsEsm: ['.ts'],
   moduleNameMapper: {
-    '^(\\.{1,2}/.*)\\.js$': '$1',
     '^@core/(.*)$': '<rootDir>/src/core/$1',
     '^@domain/(.*)$': '<rootDir>/src/domain/$1',
     '^@carriers/(.*)$': '<rootDir>/src/carriers/$1',

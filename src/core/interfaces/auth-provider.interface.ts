@@ -1,5 +1,5 @@
-import type { Result } from '../../utils/result.js';
-import type { AuthenticationError } from '../errors/auth.error.js';
+import type { Result } from '../../utils/result';
+import type { AuthenticationError } from '../errors/auth.error';
 
 export interface AuthToken {
   accessToken: string;

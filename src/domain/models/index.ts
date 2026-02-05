@@ -1,12 +1,12 @@
-export type { Address } from './address.js';
+export type { Address } from './address';
 export {
   WeightUnit,
   DimensionUnit,
   PackagingType,
-} from './package.js';
-export type { Weight, Dimensions, Package } from './package.js';
-export { ServiceLevel } from './shipment.js';
-export type { Shipment } from './shipment.js';
+} from './package';
+export type { Weight, Dimensions, Package } from './package';
+export { ServiceLevel } from './shipment';
+export type { Shipment } from './shipment';
 export type {
   Money,
   ChargeBreakdown,
@@ -14,4 +14,4 @@ export type {
   RateQuote,
   RateRequest,
   RateResponse,
-} from './rate-quote.js';
+} from './rate-quote';

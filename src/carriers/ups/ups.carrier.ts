@@ -2,15 +2,15 @@ import type {
   ICarrier,
   ICarrierOperation,
   OperationType,
-} from '../../core/interfaces/carrier.interface.js';
-import type { IHttpClient } from '../../core/interfaces/http-client.interface.js';
-import type { Result } from '../../utils/result.js';
-import { ok, err } from '../../utils/result.js';
-import { ShippingError } from '../../core/errors/base.error.js';
-import type { UPSConfig } from './ups.config.js';
-import { UPSAuthProvider } from './ups.auth-provider.js';
-import { UPSRateProvider } from './ups.rate-provider.js';
-import { UPS_CARRIER_ID, UPS_CARRIER_NAME } from './ups.constants.js';
+} from '../../core/interfaces/carrier.interface';
+import type { IHttpClient } from '../../core/interfaces/http-client.interface';
+import type { Result } from '../../utils/result';
+import { ok, err } from '../../utils/result';
+import { ShippingError } from '../../core/errors/base.error';
+import type { UPSConfig } from './ups.config';
+import { UPSAuthProvider } from './ups.auth-provider';
+import { UPSRateProvider } from './ups.rate-provider';
+import { UPS_CARRIER_ID, UPS_CARRIER_NAME } from './ups.constants';
 
 export class UPSCarrier implements ICarrier {
   readonly id = UPS_CARRIER_ID;

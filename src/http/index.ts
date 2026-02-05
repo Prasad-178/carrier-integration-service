@@ -1,1 +1,1 @@
-export { AxiosHttpClient, type AxiosClientOptions } from './axios-client.js';
+export { AxiosHttpClient, type AxiosClientOptions } from './axios-client';

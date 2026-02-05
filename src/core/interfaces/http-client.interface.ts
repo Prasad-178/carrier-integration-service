@@ -1,5 +1,5 @@
-import type { Result } from '../../utils/result.js';
-import type { NetworkError } from '../errors/network.error.js';
+import type { Result } from '../../utils/result';
+import type { NetworkError } from '../errors/network.error';
 
 export interface HttpRequest {
   method: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';

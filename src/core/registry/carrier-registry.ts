@@ -1,7 +1,7 @@
-import type { ICarrier, OperationType } from '../interfaces/carrier.interface.js';
-import { CarrierNotFoundError } from '../errors/carrier.error.js';
-import type { Result } from '../../utils/result.js';
-import { ok, err } from '../../utils/result.js';
+import type { ICarrier, OperationType } from '../interfaces/carrier.interface';
+import { CarrierNotFoundError } from '../errors/carrier.error';
+import type { Result } from '../../utils/result';
+import { ok, err } from '../../utils/result';
 
 export class CarrierRegistry {
   private static instance: CarrierRegistry;

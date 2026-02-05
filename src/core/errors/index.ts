@@ -3,18 +3,18 @@ export {
   type ErrorCode,
   type ErrorContext,
   type ShippingErrorOptions,
-} from './base.error.js';
+} from './base.error';
 export {
   AuthenticationError,
   TokenExpiredError,
   InvalidCredentialsError,
-} from './auth.error.js';
+} from './auth.error';
 export {
   NetworkError,
   TimeoutError,
   RateLimitError,
   type TimeoutErrorOptions,
   type RateLimitErrorOptions,
-} from './network.error.js';
-export { ValidationError } from './validation.error.js';
-export { CarrierError, CarrierNotFoundError } from './carrier.error.js';
+} from './network.error';
+export { ValidationError } from './validation.error';
+export { CarrierError, CarrierNotFoundError } from './carrier.error';

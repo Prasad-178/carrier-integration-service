@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { WeightUnit, DimensionUnit, PackagingType } from '../models/package.js';
+import { WeightUnit, DimensionUnit, PackagingType } from '../models/package';
 
 export const WeightUnitSchema = z.nativeEnum(WeightUnit);
 export const DimensionUnitSchema = z.nativeEnum(DimensionUnit);

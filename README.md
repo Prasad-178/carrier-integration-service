@@ -218,12 +218,6 @@ npm run test:watch
 
 ## Technical Notes
 
-### ESM Import Extensions
-
-The source code uses `.js` extensions in TypeScript imports (e.g., `import { foo } from './bar.js'`). This is the [recommended pattern](https://www.typescriptlang.org/docs/handbook/modules/reference.html#file-extension-substitution) for Node.js ESM projects - TypeScript compiles `.ts` → `.js` but doesn't rewrite import paths, so imports must reference the output extension.
-
-The project uses [tsup](https://tsup.egoist.dev/) as a bundler, which produces a clean single-file ESM output.
-
 ### TypeScript Enums with Zod
 
 Domain types (ServiceLevel, WeightUnit, etc.) are TypeScript enums, validated at runtime using Zod's `z.nativeEnum()`:

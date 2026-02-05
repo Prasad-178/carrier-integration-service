@@ -1,5 +1,5 @@
 import type { ZodIssue } from 'zod';
-import { ShippingError } from './base.error.js';
+import { ShippingError } from './base.error';
 
 export class ValidationError extends ShippingError {
   readonly issues: ZodIssue[];

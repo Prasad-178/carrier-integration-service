@@ -1,4 +1,4 @@
-export { AddressSchema, type AddressInput, type AddressOutput } from './address.schema.js';
+export { AddressSchema, type AddressInput, type AddressOutput } from './address.schema';
 export {
   WeightSchema,
   DimensionsSchema,
@@ -10,13 +10,13 @@ export {
   type WeightInput,
   type DimensionsInput,
   type PackageInput,
-} from './package.schema.js';
+} from './package.schema';
 export {
   ShipmentSchema,
   ServiceLevelSchema,
   type ShipmentInput,
-} from './shipment.schema.js';
-export { RateRequestSchema, type RateRequestInput } from './rate-request.schema.js';
+} from './shipment.schema';
+export { RateRequestSchema, type RateRequestInput } from './rate-request.schema';
 export {
   RateResponseSchema,
   RateQuoteSchema,
@@ -25,4 +25,4 @@ export {
   DeliveryEstimateSchema,
   type RateQuoteOutput,
   type RateResponseOutput,
-} from './rate-response.schema.js';
+} from './rate-response.schema';

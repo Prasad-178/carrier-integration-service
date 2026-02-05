@@ -1,6 +1,6 @@
-import { MockHttpClient } from '../../mocks/http-client.mock.js';
-import { UPSAuthProvider } from '../../../src/carriers/ups/ups.auth-provider.js';
-import type { UPSConfig } from '../../../src/carriers/ups/ups.config.js';
+import { MockHttpClient } from '../../mocks/http-client.mock';
+import { UPSAuthProvider } from '../../../src/carriers/ups/ups.auth-provider';
+import type { UPSConfig } from '../../../src/carriers/ups/ups.config';
 
 describe('UPS Auth Flow', () => {
   let mockHttp: MockHttpClient;

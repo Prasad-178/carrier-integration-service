@@ -3,4 +3,4 @@ export {
   getEnvironment,
   clearEnvironmentCache,
   type Environment,
-} from './environment.js';
+} from './environment';

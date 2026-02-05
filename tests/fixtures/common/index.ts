@@ -1,2 +1,2 @@
-export { ADDRESSES } from './addresses.js';
-export { PACKAGES } from './packages.js';
+export { ADDRESSES } from './addresses';
+export { PACKAGES } from './packages';

@@ -1,7 +1,7 @@
 import { z } from 'zod';
-import { AddressSchema } from './address.schema.js';
-import { PackageSchema } from './package.schema.js';
-import { ServiceLevelSchema } from './shipment.schema.js';
+import { AddressSchema } from './address.schema';
+import { PackageSchema } from './package.schema';
+import { ServiceLevelSchema } from './shipment.schema';
 
 const isoDateRegex = /^\d{4}-\d{2}-\d{2}$/;
 

@@ -2,14 +2,14 @@ import type {
   IHttpClient,
   HttpRequest,
   HttpResponse,
-} from '../../src/core/interfaces/http-client.interface.js';
-import type { Result } from '../../src/utils/result.js';
-import { ok, err } from '../../src/utils/result.js';
+} from '../../src/core/interfaces/http-client.interface';
+import type { Result } from '../../src/utils/result';
+import { ok, err } from '../../src/utils/result';
 import {
   NetworkError,
   TimeoutError,
   RateLimitError,
-} from '../../src/core/errors/network.error.js';
+} from '../../src/core/errors/network.error';
 
 type MockHandler = (
   req: HttpRequest

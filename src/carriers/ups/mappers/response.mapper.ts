@@ -5,10 +5,10 @@ import type {
   Money,
   ChargeBreakdown,
   DeliveryEstimate,
-} from '../../../domain/models/index.js';
-import { ServiceLevel } from '../../../domain/models/index.js';
-import type { UPSRateResponse, UPSRatedShipment, UPSCharges } from '../types/api.types.js';
-import { UPS_SERVICE_CODES, UPS_CARRIER_ID, UPS_CARRIER_NAME } from '../ups.constants.js';
+} from '../../../domain/models/index';
+import { ServiceLevel } from '../../../domain/models/index';
+import type { UPSRateResponse, UPSRatedShipment, UPSCharges } from '../types/api.types';
+import { UPS_SERVICE_CODES, UPS_CARRIER_ID, UPS_CARRIER_NAME } from '../ups.constants';
 
 export class UPSResponseMapper {
   toDomainResponse(upsResponse: UPSRateResponse, requestId: string): RateResponse {

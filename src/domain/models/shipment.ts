@@ -1,5 +1,5 @@
-import type { Address } from './address.js';
-import type { Package } from './package.js';
+import type { Address } from './address';
+import type { Package } from './package';
 
 export enum ServiceLevel {
   GROUND = 'GROUND',
