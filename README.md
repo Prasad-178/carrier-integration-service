@@ -1,5 +1,7 @@
 # Cybership - Carrier Integration Service
 
+[![CI](https://github.com/Prasad-178/carrier-integration-service/actions/workflows/ci.yml/badge.svg)](https://github.com/Prasad-178/carrier-integration-service/actions/workflows/ci.yml)
+
 A TypeScript shipping carrier integration service with extensible architecture for fetching shipping rates from multiple carriers.
 
 ## Features
@@ -183,9 +185,9 @@ if (!result.success) {
 }
 ```
 
-## Testing
+## Development
 
-The test suite uses a mock HTTP client to simulate API responses without network calls:
+### Available Scripts
 
 ```bash
 # Run all tests
@@ -196,7 +198,23 @@ npm run test:coverage
 
 # Watch mode
 npm run test:watch
+
+# Lint code
+npm run lint
+
+# Lint and fix
+npm run lint:fix
+
+# Type check
+npm run typecheck
+
+# Build
+npm run build
 ```
+
+### Testing
+
+The test suite uses a mock HTTP client to simulate API responses without network calls.
 
 ### Test Coverage
 
@@ -235,6 +253,26 @@ export const ServiceLevelSchema = z.nativeEnum(ServiceLevel);
 ```
 
 This provides both compile-time type safety and runtime validation.
+
+### Environment Variable Parsing
+
+Configuration is validated using Zod schemas before use:
+
+```typescript
+import { createUPSConfigFromEnv } from 'cybership';
+
+// Validates UPS_CLIENT_ID, UPS_CLIENT_SECRET, etc. from process.env
+const configResult = createUPSConfigFromEnv();
+
+if (!configResult.success) {
+  console.error('Missing or invalid env vars:', configResult.error.message);
+  process.exit(1);
+}
+```
+
+### Date Handling
+
+Uses [dayjs](https://day.js.org/) for all date manipulation instead of manual `Date.now()` math, ensuring readable and maintainable time calculations.
 
 ## License
 
